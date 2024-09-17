@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 :root {
-    --color-dark: #0B0F19;
-    --color-primary: #6366F1;
-    --color-gray: #9397AD;
-    --color-white: #ffffff;
+    --color-dark: #0B0F19; /* Ändra färg här sen */
+    --color-primary: #6366F1; /* Ändra färg här sen */
+    --color-gray: #9397AD; /* Ändra färg här sen */
+    --color-white: #ffffff; /* Ändra färg här sen */
 
     --container-padding: 1rem;
     --transition-time: all 0.2s;
@@ -69,7 +69,7 @@ header {
 }
 
 .nav-link {
-    color: var(--color-dark);
+    color: var(--color-dark); /* Ändra färg här sen */
     font-weight: 600;
     text-decoration: none;
 }
@@ -108,7 +108,6 @@ header {
     position: relative;
 
     input[type="checkbox"] {
-        /* appearance: none; */
         width: 0;
         height: 0;
         opacity: 0;
@@ -121,10 +120,6 @@ header {
 
     .slider {
         position: absolute;
-        /* top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0; */
         inset: 0;
         background-color: #ccc;
         border-radius: 100vw;
@@ -149,11 +144,12 @@ header {
 
     input[type="checkbox"]:checked ~ .slider::before {
         left: calc(100% - var(--_h));
-        background-color: var(--color-primary);
+        background-color: var(--color-white);
     }
     input[type="checkbox"]:checked ~ .slider {
-        background-color: #ccc;
-        background-color: hsl(from var(--color-primary) h calc(s / 2) calc(l + 35));
+        background-color: var(--color-primary);
+        /* background-color: #ccc; */
+        /* background-color: hsl(from var(--color-primary) h calc(s / 2) calc(l + 35)); */
     }
 
 }
@@ -165,7 +161,7 @@ header {
 }
 
 .btn-primary {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary); 
     color: var(--color-white);
     border-radius: 8px;
     padding: 12px 25px;
@@ -176,7 +172,7 @@ header {
 }
 
 .btn-primary:hover {
-    background-color: var(--color-gray);
+    background-color: var(--color-gray); /* Ändra färg här sen */
     color: var(--color-white);
     text-decoration: none;
 }
@@ -193,11 +189,37 @@ header {
 
 /* Slutet av headern */
 
-/* Början av Main Section 1 */
-/* Slutet av Main Section 1 */
+/* Början av Main Section Hero */
+/* Slutet av Main Section Hero */
 
-/* Början av Main Section 2 */
-/* Slutet av Main Section 2 */
+/* Början av Main Section Loggor */
+
+#logos {
+    display: none;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+.logo-box {
+    border: 1px solid var(--color-gray); /* Ändra färg här sen */
+    border-radius: 5px;
+    height: 100px;
+    width: 196px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+/* Slutet av Main Section Loggor */
 
 /* Början av Main Section 3 */
 /* Slutet av Main Section 3 */
@@ -211,7 +233,7 @@ footer {
     font-size: 14px;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    color: var(--color-gray);
+    color: var(--color-gray); /* Ändra färg här sen */
 
     .container {
         display: flex;
@@ -249,6 +271,14 @@ footer {
             flex-direction: row;
         }
     }
+
+    #logos {
+        display: block;
+    }
+
+    #logo-5, #logo-6 {
+        display: none;
+    }
 }
 
 /* Media querries för Desktop */
@@ -275,6 +305,10 @@ footer {
 
     .navbar {
         display: block;
+    }
+
+    #logo-5, #logo-6 {
+        display: flex;
     }
 
 }

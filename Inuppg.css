@@ -91,6 +91,10 @@ header {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+
+    .label {
+        display: none;
+    }
 }
 
 .toggle-switch {
@@ -156,7 +160,7 @@ header {
 
 /* Sign in knapp */
 
-#auth-signin {
+#loggain {
     display: none;
 }
 
@@ -187,12 +191,41 @@ header {
     font-size: 2rem;
 }
 
+/* Slutet av headern */
 
+/* Början av Main Section 1 */
+/* Slutet av Main Section 1 */
 
+/* Början av Main Section 2 */
+/* Slutet av Main Section 2 */
 
+/* Början av Main Section 3 */
+/* Slutet av Main Section 3 */
 
+/* Början av Main Section 4 */
+/* Slutet av Main Section 4 */
 
+/* Början av Footern */
 
+footer {
+    font-size: 14px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: var(--color-gray);
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+}
+
+/* Slutet av Footern */
+
+/* Media querries för Tablet */
 
 @media (min-width: 768px) {
     .container {
@@ -210,7 +243,15 @@ header {
             gap: 3rem;
         }
     }
+
+    footer {
+        .container {
+            flex-direction: row;
+        }
+    }
 }
+
+/* Media querries för Desktop */
 
 @media (min-width: 1400px) {
     .container {
@@ -224,7 +265,7 @@ header {
         }
     }
 
-    #auth-loggain {
+    #loggain {
         display: block;
     }
 
@@ -235,4 +276,5 @@ header {
     .navbar {
         display: block;
     }
+
 }

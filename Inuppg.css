@@ -192,9 +192,12 @@ header {
 /* Början av Main Section Hero */
 
 #hero-sect {
+    background: rgb(99,102,241);
     background: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
 
     overflow: hidden;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
 
     #break {
         display: block;
@@ -254,7 +257,6 @@ header {
             align-items: center;
             justify-content: center;
             gap: 1.5rem;
-            margin-bottom: 1.8rem;
             font-size: 14px;
 
         }
@@ -309,8 +311,67 @@ header {
 
 /* Slutet av Main Section Loggor */
 
-/* Början av Main Section 3 */
-/* Slutet av Main Section 3 */
+/* Början av Main Section How Does It Work */
+
+#how-does-it-work {
+    background-color: #F3F6FF;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .break {
+        display: none;
+    }
+
+    .top-text {
+        text-align: center;
+        h1 {
+            font-size: 30px;
+            font-weight: 800;
+        }
+
+    }
+
+    .images2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .T-your-cards, 
+        .T-transfer1, 
+        .T-transfer2, 
+        .D-transfer, 
+        .D-your-cards, 
+        .D-my-budget {
+            display: none;
+        }
+    }
+
+    .bottom-text {
+        text-align: center;
+        display: grid;
+        gap: 1rem;
+
+        .desktop, 
+        .tablet {
+            display: none;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+}
+
+/* Slutet av Main Section How Does It Work */
 
 /* Början av Main Section 4 */
 /* Slutet av Main Section 4 */
@@ -417,7 +478,6 @@ footer {
 
         }
 
-
         .images {
             display: block;
             grid-column: 2 / 4;
@@ -426,6 +486,57 @@ footer {
             .img-whole {
                 width: 100%;
                 height: 100%;
+            }
+        }
+    }
+
+    #how-does-it-work {
+        
+        .container {
+            gap: 3rem;
+        }
+        
+        .break {
+            display: block;
+        }
+
+        .top-text {
+            h1 {
+                font-size: 33px;
+            }
+        }
+
+        .images2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            .T-transfer1, 
+            .T-your-cards, 
+            .T-transfer2 {
+                display: block;
+            }
+            .M-transfer {
+                display: none;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+
+        .bottom-text {
+            h2 {
+                font-size: 23px;
+            }
+
+            .desktop,
+            .phone {
+                display: none;
+            }
+            
+            .tablet {
+                display: block;
             }
         }
     }
@@ -527,6 +638,44 @@ footer {
             .img-whole {
                 width: 100%;
                 height: 100%;
+            }
+        }
+    }
+
+    #how-does-it-work {
+        padding-bottom: 5rem;
+
+        .top-text {
+            h1 {
+                font-size: 40px;
+            }
+        }
+        
+        .images2 {
+            gap: 7rem;
+
+            .D-transfer, 
+            .D-your-cards, 
+            .D-my-budget {
+                display: block;
+            }
+            .T-transfer1, 
+            .T-your-cards, 
+            .T-transfer2 {
+                display: none;
+            }
+        }
+
+        .bottom-text {
+            h2 {
+                font-size: 24px;
+            }
+    
+            .tablet {
+                display: none;
+            }
+            .desktop {
+                display: block;
             }
         }
     }

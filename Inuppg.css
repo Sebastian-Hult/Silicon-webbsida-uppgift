@@ -442,8 +442,77 @@ header {
 
 /* Slutet av Main Section How Does It Work */
 
-/* Början av Main Section 4 */
-/* Slutet av Main Section 4 */
+/* Början av Main Section Subscribe */
+
+#subscribe {
+    padding: var(--container-padding);
+    .D-sub-text {
+        display: none;
+    }
+
+    .container {
+        background-color: #F3F6FF;
+        border-radius: .5em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        display: grid;
+        gap: 2em;
+        align-items: center;
+    }
+    .sub-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+
+        p {
+            font-size: 21px;
+            font-weight: 800;
+        }
+    }
+    .search {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    .input-email {
+        background-image: url();
+        font-size: 16px;
+        color: var(--color-gray); /* Ändra sen */
+        border: .5px solid var(--color-gray);
+        border-radius: .5em 0 0 .5em;
+        padding-left: 2em;
+    }
+    .icon {
+        color: var(--color-gray);
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+
+        transform: translateY(-50%);
+    }
+    .label-email {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-primary);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        /* padding: 1rem; */
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        border: 0;
+        border-radius: 0 .5em .5em 0;
+    }
+
+}
+
+/* Slutet av Main Section Subscribe */
 
 /* Början av Footern */
 
@@ -636,6 +705,19 @@ footer {
         }
     }
 
+    #subscribe {
+
+        .container {
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            padding-top: 4em;
+            padding-bottom: 4em;
+        }
+        .search {
+            /* height: 3.5rem; */
+        }
+    }
+
 }
 
 /* Media querries för Desktop */
@@ -808,6 +890,24 @@ footer {
             .desktop {
                 display: block;
             }
+        }
+    }
+
+    #subscribe {
+        .D-sub-text {
+            display: block;
+        }
+        .M-sub-text {
+            display: none;
+        }
+        .search {
+            width: 472px;
+        }
+        .input-email {
+            width: 330px;
+        }
+        .icon {
+            left: 1.5rem;
         }
     }
 }

@@ -442,6 +442,14 @@ header {
 
 /* Slutet av Main Section How Does It Work */
 
+/* Början av Main Section Money-Transfer */
+
+#money-transfer {
+    display: none;
+}
+
+/* Slutet av Main Section Money-Transfer */
+
 /* Början av Main Section Subscribe */
 
 #subscribe {
@@ -889,6 +897,91 @@ footer {
             }
             .desktop {
                 display: block;
+            }
+        }
+    }
+
+    #money-transfer {
+        display: block;
+        padding-top: 6rem;
+        padding-bottom: 5rem;
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            justify-content: center;
+
+            h2 {
+                font-size: 32px;
+                font-weight: 800; 
+              }
+
+        }
+        .left-transfer {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+        }
+        .money-transfer {
+            display: grid;
+            align-items: center;
+            gap: 2.5rem;
+
+        }
+        .money-check {
+            display: grid;
+            align-items: center;
+            gap: .7rem;
+            p {
+                display: flex;
+                align-items: center;
+                gap: .7rem;
+            }
+        }
+        .right-transfer {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+        }
+        .payments {
+            display: grid;
+            gap: 2.5rem;
+            padding-top: rem;
+            padding-right: 7rem;
+
+        }
+        .payment-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+
+        }
+        .payment-info-card {
+            display: grid;
+            gap: 1rem;
+
+            .symbols {
+                background-color: #eeeeee; /* Ändra senare */
+                padding: .8rem;
+                border-radius: 8px;
+            }
+        }
+        .btn-learnmore {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            height: 3rem;
+            width: 10rem;
+            border-radius: .5rem;
+            font-size: 14px;
+            font-weight: 400;
+
+            .arrow {
+                padding-left: .5rem;
+                font-weight: 400;
             }
         }
     }

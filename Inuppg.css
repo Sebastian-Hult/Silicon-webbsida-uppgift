@@ -450,6 +450,14 @@ header {
 
 /* Slutet av Main Section Money-Transfer */
 
+/* Början an Main Section Reviews */
+
+#reviews {
+    display: none;
+}
+
+/* Slutet an Main Section Reviews */
+
 /* Början av Main Section Subscribe */
 
 #subscribe {
@@ -982,6 +990,94 @@ footer {
             .arrow {
                 padding-left: .5rem;
                 font-weight: 400;
+            }
+        }
+    }
+
+    #reviews {
+        display: block;
+        background-color: #F3F6FF;
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            /* gap: 1.2rem; */
+        }
+
+        .headline {
+            width: 306px;
+            height: 110px;
+            h2 {
+                font-size: 40px;
+                font-weight: 800;
+            }
+
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .card {
+            background-color: var(--color-white);
+            display: grid;
+            gap: 1rem;
+            position: relative;
+            width: 416px;
+            height: 329px;
+            border-radius: .5rem;
+            box-shadow: 1px 1px 15px -10px;
+            padding: 3.5rem 1.5rem 1.5rem 1.5rem;
+
+            
+            .quotations {
+                background-color: var(--color-primary);
+                position: absolute;
+                padding: .8rem;
+                border: 0px;
+                border-radius: .5rem;
+                left: 1.5rem;
+                top: -1.6rem;
+                box-shadow: 0px 10px 20px -15px;
+            }
+
+            .review {
+                font-size: 18px;
+                color: var(--color-gray);
+            }
+
+            .person {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .person-img {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .person-info {
+                display: flex;
+                flex-direction: column;
+                gap: .3rem;
+                
+                h3 {
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+                p {
+                    font-size: 14px;
+                    color: var(--color-gray);
+                }
             }
         }
     }

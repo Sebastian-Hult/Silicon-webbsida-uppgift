@@ -18,7 +18,7 @@
     box-sizing: border-box;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-body {
+body, button {
     font-family: "Manrope", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -458,6 +458,116 @@ header {
 
 /* Slutet an Main Section Reviews */
 
+/* Början av Main Section FAQ */
+
+/* Universell kod för pil upp \f077 */
+/* Universell kod för pil ned \f078 */
+
+#FAQ { /* Biten om Accordions har jag tagit från W3 schools HOW TO Create An Accordion */
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    
+    .break {
+        display: none;
+    }
+
+    .contact-phone, 
+    .contact-chat {
+        display: none;
+    }
+
+    .container {
+        display: grid;
+        gap: 3rem;
+        justify-items: center;
+    }
+    .text-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        
+        h2 {
+            font-size: 24.7px;
+            font-weight: 800;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        p {
+            font-size: 18px;
+            color: var(--color-gray);
+        }
+    }
+
+    .accordions {
+        border: 1px solid var(--color-gray);
+        border-radius: .5rem;
+        overflow: hidden;
+    }
+
+    .accordion {
+        background-color: var(--color-white);
+        color: var(--color-dark);
+        cursor: pointer;
+        padding: 1rem;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+    }
+     .border {
+        border-bottom: 1px solid var(--color-gray);
+     }
+    .active, .accordion:hover {
+        text-decoration: none;
+
+
+    }
+    .panel {
+        font-size: 14px;
+        background-color: #fff;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .2s ease-out;
+
+        p {
+            padding: 1rem;
+        }
+    }
+    .accordion:before {
+        content: '\f078';
+        font-size: 16px;
+        text-align: center;
+        background-color: #ccc;
+        padding: .5rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        color: var(--color-dark);
+        float: right;
+        margin-left: 1rem;
+    }
+    .active:before {
+        content: '\f077';
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        box-shadow: 0px 8px 18px -8px rgba(99, 101, 241, 0.9);
+
+    }
+
+    .btn-contact {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: .5rem;
+    }
+
+
+}
+
+/* Slutet av Main Section FAQ */
+
 /* Början av Main Section Subscribe */
 
 #subscribe {
@@ -719,6 +829,103 @@ footer {
                 display: block;
             }
         }
+    }
+
+    #FAQ {
+
+        .break {
+            display: none;
+        }
+        .container {
+            justify-items: normal;
+        }
+
+        .text-info {
+            h2 {
+                font-size: 32px;
+                font-weight: 800;
+            }
+            p {
+                font-size: 18px;
+            }
+        }
+        .contact-btn {
+            display: none;
+        }
+        .contact-phone, 
+        .contact-chat {
+            display: block;
+
+            p {
+                font-size: 14px;
+            }
+            
+        }
+        .accordions {
+            display: grid;
+            gap: 1rem;
+            border: none;
+            overflow: unset;
+            
+            .border {
+                box-shadow: 0 4.4px 20px -1px rgba(10, 8, 17, 0.05), 0 4px 9px -1px rgba(6, 5, 10, 0.03);
+                border: none;
+                border-radius: .5rem;
+                overflow: hidden;
+            }
+            .accordion {
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+        .contacts {
+            grid-row: 3;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .contact-phone {
+            border: 1px solid var(--color-gray);
+            border-radius: .5rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .icons {
+                color: var(--color-primary);
+            }
+            a {
+                color: var(--color-primary);
+                font-size: 14px;
+                font-weight: 600;
+            }
+            p {
+                color: var(--color-gray);
+            }
+        }
+        .contact-chat {
+            border: 1px solid var(--color-gray);
+            border-radius: .5rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .icons {
+                color: #22C55E;
+            }
+
+            a {
+                color: #22C55E;
+                font-size: 14px;
+                font-weight: 600;
+            }
+            p {
+                color: var(--color-gray);
+            }
+        }
+
     }
 
     #subscribe {
@@ -1079,6 +1286,47 @@ footer {
                     color: var(--color-gray);
                 }
             }
+        }
+    }
+
+    #FAQ {
+
+        .break {
+            display: block;
+        }
+        .container {
+            grid-template-columns: 1fr 1fr;
+            row-gap: 2.5rem;
+            column-gap: .5rem;
+            justify-items: baseline;
+        }
+        .text-info {
+            text-align: start;
+            grid-row: 1;
+            grid-column: 1;
+
+            h2 {
+                padding: 0;
+
+            }
+        }
+
+        .contact-phone {
+            padding: 1rem;
+            gap: 1rem;
+        }
+        .contact-chat {
+            padding: 1rem;
+            gap: 1rem;
+        }
+        .accordions {
+            grid-row: 1 / 4;
+            grid-column: 2;
+        }
+
+        .contacts {
+            grid-row: 2;
+            grid-column: 1;
         }
     }
 

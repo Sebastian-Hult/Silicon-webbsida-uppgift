@@ -1,13 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 :root {
-    --color-dark: #0B0F19; /* Ändra färg här sen */
-    --color-primary: #6366F1; /* Ändra färg här sen */
-    --color-gray: #9397AD; /* Ändra färg här sen */
-    --color-white: #ffffff; /* Ändra färg här sen */
+    /* --Light Mode Colors-- */
 
+    /* Grayscales */
+    --color-light-bg: #F3F6FF; /* Gray-100 */
+    --color-secondary: #EFF2FC; /* Gray-200 */
+    --color-divider-border: #E2E5F1; /* Gray-300 */
+    --color-forms-border: #D4D7E5; /* Gray-400 */
+    --color-input-placeholder: #B4B7C9; /* Gray-500 */
+    --color-muted-text: #9397AD; /* Gray-600 */
+    --color-body-text: #565973; /* Gray-700 */
+    --color-navigation: #33354D; /* Gray-800 */
+    --color-heading-dark: #0B0F19; /* Gray-900 */
+    --color-white: #ffffff;
+    /* Brand Colors */
+    --color-primary: #6366F1;
+    --color-gradient: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
+    --color-gradient-backup: background: rgb(99,102,241);
+    /* System Colors */
+    --color-error: #EF4444;
+    --color-succes: #22C55E;
+    --color-warning: #FFBA08;
+    --color-info: #4C82F7;
+    /* Shadows */
+    --shadow-small: 0 4.4px 12px -1px rgba(19, 16, 34, 0.06), 0 2px 6.4px -1px rgba(19, 16, 34, 0.03);
+    --shadow-medium: 0 4.4px 20px -1px rgba(19, 16, 34, 0.05), 0 4px 9px -1px rgba(19, 16, 34, 0.03);
+    --shadow-large: 0 4.8px 24.4px -6px rgba(19, 16, 34, 0.1), 0 4px 13px -2px rgba(19, 16, 34, 0.06);
+    --shadow-brand-btn: 0 8px 18px -8px rgba(99, 101, 241, 0.9);
+    --shadow-secondary: 0 8px 18px -8px rgba(19, 16, 34, 0.15);
+
+    /* --Utility-- */
     --container-padding: 1rem;
     --transition-time: all 0.2s;
+
+    /* --clr-text-body: var(--color-dark); */
+    /* --clr-headline:  */
+    /* --clr-body-bg: var(--color-white); */
+}
+
+.dark {
+    /* --clr-text-body: var(--clr-white); */
+    /* --clr-body-bg: var(--color-dark); */
 }
 
 /* ---UTILITYKLASSER--- */
@@ -24,6 +58,10 @@ body, button {
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
+    /* background-color: var(--clr-body-bg); */
+}
+p {
+    color: var(--color-body-text);
 }
 .wrapper {
     height: 100vh;
@@ -41,6 +79,7 @@ body, button {
 a {
     color: var(--color-primary);
     text-decoration: none;
+
 }
 
 a:hover {
@@ -48,7 +87,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Början av Headern */
+/* Början av Headern */ /* Denna del har jag tagit hjälp från Hans video */
 
 header {
     .container {
@@ -62,14 +101,12 @@ header {
     }
 }
 
-/* Features delen */
-
 .navbar {
     display: none;
 }
 
 .nav-link {
-    color: var(--color-dark); /* Ändra färg här sen */
+    color: var(--color-heading-dark);
     font-weight: 600;
     text-decoration: none;
 }
@@ -83,8 +120,6 @@ header {
     color: var(--color-primary);
     text-decoration: underline;
 }
-
-/* Darkmode slider knapp delen */
 
 .btn-toggle-switch {
     display: flex;
@@ -121,9 +156,9 @@ header {
     .slider {
         position: absolute;
         inset: 0;
-        background-color: #ccc;
+        background-color: var(--color-input-placeholder);
         border-radius: 100vw;
-        box-shadow: inset 0 0 4px #00000035;
+        box-shadow: var(--shadow-secondary);
         cursor: pointer;
     }
 
@@ -136,33 +171,27 @@ header {
         height: calc(100% * var(--_ball-size-ratio));
         aspect-ratio: 1;
         border-radius: 50%;
-        background-color: #fff;
-        box-shadow: 0 0 5px #00000073;
-
+        background-color: var(--color-white);
         transition: all 400ms;
     }
-
     input[type="checkbox"]:checked ~ .slider::before {
         left: calc(100% - var(--_h));
         background-color: var(--color-white);
     }
     input[type="checkbox"]:checked ~ .slider {
         background-color: var(--color-primary);
-        /* background-color: #ccc; */
-        /* background-color: hsl(from var(--color-primary) h calc(s / 2) calc(l + 35)); */
+        box-shadow: var(--shadow-brand-btn);
     }
-
 }
 
-/* Sign in knapp */
-
-#loggain {
+.loggain {
     display: none;
 }
 
 .btn-primary {
     background-color: var(--color-primary); 
     color: var(--color-white);
+    border: none;
     border-radius: 8px;
     padding: 12px 25px;
     display: flex;
@@ -172,12 +201,17 @@ header {
 }
 
 .btn-primary:hover {
-    background-color: var(--color-gray); /* Ändra färg här sen */
-    color: var(--color-white);
+    background-color: var(--color-white);
+    color: var(--color-primary);
     text-decoration: none;
+    border: 1px solid var(--color-primary);
+
+    .signin-logo {
+        color: var(--color-primary);
+    }
 }
 
-.btn-primary img {
+.btn-primary i {
     margin-right: 0.5rem;
 }
 
@@ -189,29 +223,24 @@ header {
 
 /* Slutet av headern */
 
-/* Början av Main Section Hero */
+/* Början av Main Section Hero */ /* Denna del har jag tagit hjälp från Hans video */
 
 #hero-sect {
-    background: rgb(99,102,241);
-    background: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
-
+    background: var(--color-gradient-backup);
+    background: var(--color-gradient);
     overflow: hidden;
     padding-bottom: 2rem;
     padding-top: 2rem;
 
-    #break {
+    .break {
         display: block;
     }
 
     .container {
         display: grid;
-        /* grid-template-rows: 1fr;
-        grid-template-areas: "headline""content"; */
-        /* gap: 3rem; */
     }
 
     .headline {
-        /* grid-area: headline; */
         text-align: center;
         margin-bottom: 1rem;
 
@@ -222,7 +251,6 @@ header {
     }
 
     .content {
-        /* grid-area: content; */
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -239,7 +267,7 @@ header {
         }
 
         .store {
-            background-color: var(--color-dark);
+            background-color: var(--color-heading-dark);
             color: var(--color-white);
             border-radius: 8px;
             padding: 0.6em 1.5em;
@@ -247,23 +275,20 @@ header {
             justify-content: center;
             align-items: center;
             text-decoration: none;
-
-
         }
 
         .discover-more {
-            color: var(--color-dark);
+            color: var(--color-body-text);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 1.5rem;
             font-size: 14px;
-
         }
 
         .round-btn {
             background-color: var(--color-white);
-            color: var(--color-dark);
+            color: var(--color-navigation);
             height: 44px;
             width: 44px;
             border-radius: 50%;
@@ -274,15 +299,13 @@ header {
     }
 
     .images {
-        /* grid-area: images; */
         display: none;
     }
-
 }
 
 /* Slutet av Main Section Hero */
 
-/* Början av Main Section Loggor */
+/* Början av Main Section Loggor */ /* Denna del har jag tagit hjälp från Hans video */
 
 #logos {
     display: none;
@@ -296,22 +319,18 @@ header {
         gap: 1rem;
     }
 }
-
 .logo-box {
-    border: 1px solid var(--color-gray); /* Ändra färg här sen */
+    border: 1px solid var(--color-divider-border);
     border-radius: 5px;
     height: 100px;
     width: 196px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: -2px 2px 5px 0 rgba(0, 0, 0, 0.2);
 
 }
 
 /* Slutet av Main Section Loggor */
-
-
 
 /* Början av Main Section Features */
 
@@ -328,8 +347,8 @@ header {
         }
 
         .headline {
-            /* text-align: center; */
             margin-bottom: 2rem;
+
             h1 {
                 font-size: 30px;
                 font-weight: 800;
@@ -353,7 +372,7 @@ header {
             }
             
             #symbols {
-                background-color: #cecece; /* Ändra senare */
+                background-color: var(--color-secondary);
                 padding: .8rem;
                 border-radius: 8px;
             }
@@ -373,7 +392,6 @@ header {
                 font-size: 16px;
                 line-height: 26px;
             }
-            
         }
     }
 }
@@ -383,25 +401,27 @@ header {
 /* Början av Main Section How Does It Work */
 
 #how-does-it-work {
-    background-color: #F3F6FF;
+    background-color: var(--color-light-bg);
     padding-top: 4rem;
     padding-bottom: 4rem;
+    
     .container {
         display: flex;
         flex-direction: column;
         gap: 2rem;
     }
+
     .break {
         display: none;
     }
 
     .top-text {
         text-align: center;
+
         h1 {
             font-size: 30px;
             font-weight: 800;
         }
-
     }
 
     .images2 {
@@ -444,7 +464,7 @@ header {
 
 /* Början av Main Section Money-Transfer */
 
-#money-transfer {
+#money-transfer { /* Denna sektion är bara med i Desktop så denna är stylad i MediaQuerries för Desktop */
     display: none;
 }
 
@@ -452,16 +472,13 @@ header {
 
 /* Början an Main Section Reviews */
 
-#reviews {
+#reviews { /* Denna sektion är bara med i Desktop så denna är stylad i MediaQuerries för Desktop */
     display: none;
 }
 
 /* Slutet an Main Section Reviews */
 
 /* Början av Main Section FAQ */
-
-/* Universell kod för pil upp \f077 */
-/* Universell kod för pil ned \f078 */
 
 #FAQ { /* Biten om Accordions har jag tagit från W3 schools HOW TO Create An Accordion */
     padding-top: 3rem;
@@ -495,19 +512,18 @@ header {
         }
         p {
             font-size: 18px;
-            color: var(--color-gray);
+
         }
     }
 
     .accordions {
-        border: 1px solid var(--color-gray);
+        border: 1px solid var(--color-divider-border);
         border-radius: .5rem;
         overflow: hidden;
     }
-
     .accordion {
         background-color: var(--color-white);
-        color: var(--color-dark);
+        color: var(--color-heading-dark);
         cursor: pointer;
         padding: 1rem;
         width: 100%;
@@ -515,17 +531,15 @@ header {
         border: none;
         outline: none;
     }
-     .border {
-        border-bottom: 1px solid var(--color-gray);
-     }
+    .border {
+        border-bottom: 1px solid var(--color-divider-border);
+    }
     .active, .accordion:hover {
         text-decoration: none;
-
-
     }
     .panel {
         font-size: 14px;
-        background-color: #fff;
+        background-color: var(--color-white);
         max-height: 0;
         overflow: hidden;
         transition: max-height .2s ease-out;
@@ -536,25 +550,28 @@ header {
     }
     .accordion:before {
         content: '\f078';
+        font-family: 'FontAwesome';
+        font-weight: 400;
         font-size: 16px;
         text-align: center;
-        background-color: #ccc;
+        background-color: var(--color-secondary);
         padding: .5rem;
         width: 1rem;
         height: 1rem;
         border-radius: 50%;
-        color: var(--color-dark);
+        color: var(--color-heading-dark);
         float: right;
         margin-left: 1rem;
     }
     .active:before {
         content: '\f077';
+        font-family: 'FontAwesome';
+        font-weight: 400;
         background-color: var(--color-primary);
         color: var(--color-white);
-        box-shadow: 0px 8px 18px -8px rgba(99, 101, 241, 0.9);
+        box-shadow: var(--shadow-brand-btn);
 
     }
-
     .btn-contact {
         background-color: var(--color-primary);
         color: var(--color-white);
@@ -562,8 +579,6 @@ header {
         border: none;
         border-radius: .5rem;
     }
-
-
 }
 
 /* Slutet av Main Section FAQ */
@@ -577,7 +592,7 @@ header {
     }
 
     .container {
-        background-color: #F3F6FF;
+        background-color: var(--color-light-bg);
         border-radius: .5em;
         padding-top: 2em;
         padding-bottom: 2em;
@@ -604,17 +619,22 @@ header {
     .input-email {
         background-image: url();
         font-size: 16px;
-        color: var(--color-gray); /* Ändra sen */
-        border: .5px solid var(--color-gray);
+        color: var(--color-input-placeholder);
+        border: 1px solid var(--color-forms-border);
         border-radius: .5em 0 0 .5em;
         padding-left: 2em;
     }
+    .input-email::placeholder {
+        color: var(--color-input-placeholder);
+    }
+    .input-email:focus { /* Om man vill ta bort bordern som skapas vid aktivering */
+        /* outline: none; */
+    }
     .icon {
-        color: var(--color-gray);
+        color: var(--color-input-placeholder);
         position: absolute;
         top: 50%;
         left: 1rem;
-
         transform: translateY(-50%);
     }
     .label-email {
@@ -622,20 +642,20 @@ header {
         justify-content: center;
         align-items: center;
         background-color: var(--color-primary);
-        color: #fff;
+        color: var(--color-white);
         font-size: 16px;
         font-weight: 600;
         text-align: center;
-        /* padding: 1rem; */
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-
-        border: 0;
+        padding: 1rem;
+        border: none;
         border-radius: 0 .5em .5em 0;
     }
-
+    .label-email:hover {
+        background-color: var(--color-white);
+        color: var(--color-primary);
+        border: 1px solid var(--color-primary);
+        cursor: pointer;
+    }
 }
 
 /* Slutet av Main Section Subscribe */
@@ -646,7 +666,6 @@ footer {
     font-size: 14px;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    color: var(--color-gray); /* Ändra färg här sen */
 
     .container {
         display: flex;
@@ -655,7 +674,6 @@ footer {
         align-items: center;
         gap: 5px;
     }
-
 }
 
 /* Slutet av Footern */
@@ -666,6 +684,8 @@ footer {
     .container {
         max-width: 720px;
     }
+
+    /* Header Start */
 
     .btn-toggle-switch {
         .label {
@@ -679,31 +699,21 @@ footer {
         }
     }
 
-    footer {
-        .container {
-            flex-direction: row;
-        }
-    }
+    /* Header Slut */
 
-    #logos {
-        display: block;
-    }
-
-    #logo-5, #logo-6 {
-        display: none;
-    }
+    /* Hero-sect Start */
 
     #hero-sect {
         padding-bottom: 0;
-
-        #break {
+        
+        .break {
             display: block;
         }
-
+        
         .container {
             grid-template-columns: 270px 1fr 1fr;
         }
-
+        
         .headline {
             margin-top: 1rem;
             margin-bottom: 2rem;
@@ -714,12 +724,12 @@ footer {
             }
             
         }
-
+        
         .content {
             text-align: left;
             grid-column: 1 / 2;
             grid-row: 3 / 6;
-
+            
             p {
                 font-size: 18px;
                 line-height: 28.8px;
@@ -728,22 +738,22 @@ footer {
             .store-buttons {
                 flex-direction: row;
             }
-
+            
             .store {
                 img {
                     width: 100%;
                     height: 100%;
                 }
             }
-
+            
             .discover-more {
                 justify-content: flex-start;
                 margin-bottom: 3rem;
             }
-
-
+            
+            
         }
-
+        
         .images {
             display: block;
             grid-column: 2 / 4;
@@ -756,23 +766,39 @@ footer {
         }
     }
 
+    /* Hero-sect Slut */
+
+    /* Logos Start */
+    
+    #logos {
+        display: block;
+    }
+    
+    #logo-5, #logo-6 {
+        display: none;
+    }
+    
+    /* Logos Slut */
+
+    /* Features Start */
+
     #features {
         .container {
             padding: 2rem 0px 6rem 0px;
             
             .headline {
                 margin-bottom: 3rem;
-
+                
                 h1 {
                     font-size: 34px;
                     margin-bottom: 1.5rem;
                 }
-
+                
             }
             
             .content {
                 grid-template-columns: 1fr 1fr;
-
+                
                 h2 {
                     font-size: 20px;
                 }
@@ -780,6 +806,10 @@ footer {
         }
     }
 
+    /* Features Slut */
+
+    /* How does it work Start */
+    
     #how-does-it-work {
         
         .container {
@@ -789,13 +819,13 @@ footer {
         .break {
             display: block;
         }
-
+        
         .top-text {
             h1 {
                 font-size: 33px;
             }
         }
-
+        
         .images2 {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -807,19 +837,19 @@ footer {
             .M-transfer {
                 display: none;
             }
-
+            
             img {
                 width: 100%;
                 height: 100%;
             }
-
+            
         }
-
+        
         .bottom-text {
             h2 {
                 font-size: 23px;
             }
-
+            
             .desktop,
             .phone {
                 display: none;
@@ -831,15 +861,19 @@ footer {
         }
     }
 
-    #FAQ {
+    /* How does it work Slut */
 
+    /* FAQ Start */
+    
+    #FAQ {
+        
         .break {
             display: none;
         }
         .container {
             justify-items: normal;
         }
-
+        
         .text-info {
             h2 {
                 font-size: 32px;
@@ -855,7 +889,7 @@ footer {
         .contact-phone, 
         .contact-chat {
             display: block;
-
+            
             p {
                 font-size: 14px;
             }
@@ -868,7 +902,7 @@ footer {
             overflow: unset;
             
             .border {
-                box-shadow: 0 4.4px 20px -1px rgba(10, 8, 17, 0.05), 0 4px 9px -1px rgba(6, 5, 10, 0.03);
+                box-shadow: var(--shadow-small);
                 border: none;
                 border-radius: .5rem;
                 overflow: hidden;
@@ -884,63 +918,73 @@ footer {
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
         }
-        .contact-phone {
-            border: 1px solid var(--color-gray);
+        .contact-box {
+            border: 1px solid var(--color-divider-border);
             border-radius: .5rem;
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
-
+        }
+        .contact-phone {
             .icons {
                 color: var(--color-primary);
+                font-size: 2rem;
             }
             a {
                 color: var(--color-primary);
                 font-size: 14px;
                 font-weight: 600;
-            }
-            p {
-                color: var(--color-gray);
+                
+                i {
+                    margin-left: 1rem;
+                }
             }
         }
         .contact-chat {
-            border: 1px solid var(--color-gray);
-            border-radius: .5rem;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-
             .icons {
-                color: #22C55E;
+                color: var(--color-succes);
+                font-size: 2rem;
+                transform: rotateY(180deg);
             }
-
+            
             a {
-                color: #22C55E;
+                color: var(--color-succes);
                 font-size: 14px;
                 font-weight: 600;
-            }
-            p {
-                color: var(--color-gray);
+                
+                i {
+                    margin-left: 1rem;
+                }
             }
         }
-
     }
 
-    #subscribe {
+    /* FAQ Slut */
 
+    /* Subscribe Start */
+    
+    #subscribe {
+        
         .container {
             grid-template-columns: 1fr 1fr;
             gap: 0;
             padding-top: 4em;
             padding-bottom: 4em;
         }
-        .search {
-            /* height: 3.5rem; */
+    }
+
+    /* Subscribe Slut */
+
+    /* Footer Start */
+
+    footer {
+        .container {
+            flex-direction: row;
         }
     }
 
+    /* Footer Start */
 }
 
 /* Media querries för Desktop */
@@ -949,6 +993,8 @@ footer {
     .container {
         max-width: 1320px;
     }
+    
+    /* Header Start */
 
     header {
         .container {
@@ -958,7 +1004,7 @@ footer {
         }
     }
 
-    #loggain {
+    .loggain {
         display: block;
     }
 
@@ -970,22 +1016,21 @@ footer {
         display: block;
     }
 
-    #logo-5, #logo-6 {
-        display: flex;
-    }
+    /* Header Slut */
 
+    /* Hero-sect Start */
+    
     #hero-sect {
-        #break {
+        .break {
             display: block;
         }
-
+        
         .container {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto 1fr;
             gap: 2rem;
-
         }
-
+        
         .headline {
             margin-top: 2.5rem;
             margin-bottom: 0;
@@ -996,40 +1041,36 @@ footer {
                 text-align: left;
                 line-height: 130%;
             }
-            
         }
-
+        
         .content {
             text-align: left;
             grid-column: 1;
             grid-row: 2;
-
+            
             p {
                 font-size: 18px;
-                line-height: 160%;
             }
             
             .store-buttons {
                 flex-direction: row;
             }
-
+            
             .store {
                 img {
                     width: 100%;
                     height: 100%;
                 }
             }
-
+            
             .discover-more {
                 justify-content: flex-start;
                 margin-bottom: 3rem;
                 margin-top: 5rem;
             }
-
-
         }
-
-
+        
+        
         .images {
             display: block;
             grid-column: 2;
@@ -1042,6 +1083,18 @@ footer {
         }
     }
 
+    /* Hero-sect Slut */
+
+    /* Logos Start */
+
+    #logo-5, #logo-6 {
+        display: flex;
+    }
+
+    /* Logos Slut */
+
+    /* Features Start */
+    
     #features {
         .container {
             grid-template-columns: auto 1fr;
@@ -1078,6 +1131,10 @@ footer {
         }
     }
 
+    /* Features Slut */
+
+    /* How does it work Start */
+
     #how-does-it-work {
         padding-bottom: 5rem;
 
@@ -1095,6 +1152,7 @@ footer {
             .D-my-budget {
                 display: block;
             }
+
             .T-transfer1, 
             .T-your-cards, 
             .T-transfer2 {
@@ -1106,7 +1164,6 @@ footer {
             h2 {
                 font-size: 24px;
             }
-    
             .tablet {
                 display: none;
             }
@@ -1115,6 +1172,10 @@ footer {
             }
         }
     }
+
+    /* How does it work Slut */
+
+    /* Money transfer Start */
 
     #money-transfer {
         display: block;
@@ -1131,7 +1192,6 @@ footer {
                 font-size: 32px;
                 font-weight: 800; 
               }
-
         }
         .left-transfer {
             display: grid;
@@ -1143,12 +1203,12 @@ footer {
             display: grid;
             align-items: center;
             gap: 2.5rem;
-
         }
         .money-check {
             display: grid;
             align-items: center;
             gap: .7rem;
+
             p {
                 display: flex;
                 align-items: center;
@@ -1166,20 +1226,18 @@ footer {
             gap: 2.5rem;
             padding-top: rem;
             padding-right: 7rem;
-
         }
         .payment-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
-
         }
         .payment-info-card {
             display: grid;
             gap: 1rem;
 
             .symbols {
-                background-color: #eeeeee; /* Ändra senare */
+                background-color: var(--color-secondary);
                 padding: .8rem;
                 border-radius: 8px;
             }
@@ -1187,6 +1245,7 @@ footer {
         .btn-learnmore {
             background-color: var(--color-primary);
             color: var(--color-white);
+            cursor: pointer;
             border: none;
             height: 3rem;
             width: 10rem;
@@ -1199,28 +1258,36 @@ footer {
                 font-weight: 400;
             }
         }
+        .btn-learnmore:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+        }
     }
+
+    /* Money transfer Slut */
+
+    /* Reviews Start */
 
     #reviews {
         display: block;
-        background-color: #F3F6FF;
+        background-color: var(--color-light-bg);
         padding-top: 7rem;
         padding-bottom: 7rem;
 
         .container {
             display: grid;
             grid-template-columns: 1fr auto auto;
-            /* gap: 1.2rem; */
         }
 
         .headline {
             width: 306px;
             height: 110px;
+
             h2 {
                 font-size: 40px;
                 font-weight: 800;
             }
-
         }
 
         .cards {
@@ -1240,7 +1307,6 @@ footer {
             box-shadow: 1px 1px 15px -10px;
             padding: 3.5rem 1.5rem 1.5rem 1.5rem;
 
-            
             .quotations {
                 background-color: var(--color-primary);
                 position: absolute;
@@ -1252,9 +1318,8 @@ footer {
                 box-shadow: 0px 10px 20px -15px;
             }
 
-            .review {
+            p {
                 font-size: 18px;
-                color: var(--color-gray);
             }
 
             .person {
@@ -1283,11 +1348,14 @@ footer {
                 }
                 p {
                     font-size: 14px;
-                    color: var(--color-gray);
                 }
             }
         }
     }
+
+    /* Reviews Slut */
+
+    /* FAQ Start */
 
     #FAQ {
 
@@ -1307,7 +1375,6 @@ footer {
 
             h2 {
                 padding: 0;
-
             }
         }
 
@@ -1330,6 +1397,10 @@ footer {
         }
     }
 
+    /* FAQ Slut */
+
+    /* Subscribe Start */
+
     #subscribe {
         .D-sub-text {
             display: block;
@@ -1347,4 +1418,6 @@ footer {
             left: 1.5rem;
         }
     }
+
+    /* Subscribe Slut */
 }

@@ -4,6 +4,8 @@
     /* --Light Mode Colors-- */
 
     /* Grayscales */
+    --color-white: #ffffff;
+    --color-body-bg: #ffffff;
     --color-light-bg: #F3F6FF; /* Gray-100 */
     --color-secondary: #EFF2FC; /* Gray-200 */
     --color-divider-border: #E2E5F1; /* Gray-300 */
@@ -13,7 +15,6 @@
     --color-body-text: #565973; /* Gray-700 */
     --color-navigation: #33354D; /* Gray-800 */
     --color-heading-dark: #0B0F19; /* Gray-900 */
-    --color-white: #ffffff;
     /* Brand Colors */
     --color-primary: #6366F1;
     --color-gradient: linear-gradient(0deg, rgba(99,102,241,0.1) 0%, rgba(218,70,239,0.05) 42%, rgba(241,244,253,0.07) 83%);
@@ -33,6 +34,21 @@
     /* --Utility-- */
     --container-padding: 1rem;
     --transition-time: all 0.2s;
+    --font-size-navigation: 16px;
+    --font-size-L: 18px;
+    --font-size-M: 16px;
+    --font-size-S: 14px;
+    --font-weight-reg: 400;
+    --font-weight-med: 500;
+    --font-weight-semi: 600;
+    --font-weight-bold: 700;
+    --font-weight-xbold: 800;
+    --h1-font-size: 40px;
+    --h2-font-size: 32px;
+    --h3-font-size: 28px;
+    --h4-font-size: 24px;
+    --h5-font-size: 20px;
+    --h6-font-size: 18px;
 
     /* --clr-text-body: var(--color-dark); */
     /* --clr-headline:  */
@@ -40,6 +56,12 @@
 }
 
 .dark {
+    --color-body-bg: #0B0F19;
+    --color-body-text: #fff;
+    --color-heading-dark: #fff;
+    --color-light-bg: #33354D;
+    --color-white: #33354D;
+    --color-secondary: #33354D;
     /* --clr-text-body: var(--clr-white); */
     /* --clr-body-bg: var(--color-dark); */
 }
@@ -58,10 +80,13 @@ body, button {
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
-    /* background-color: var(--clr-body-bg); */
+    background-color: var(--color-body-bg);
 }
 p {
     color: var(--color-body-text);
+}
+h1, h2 ,h3 ,h4 ,h5 ,h6 {
+    color: var(--color-heading-dark);
 }
 .wrapper {
     height: 100vh;
@@ -135,7 +160,7 @@ header {
 .toggle-switch {
     --_w: 60px;
     --_h: 30px;
-    --_ball-size-ratio: .8;
+    --_ball-size-ratio: .85;
 
     width: var(--_w);
     height: var(--_h);
@@ -158,21 +183,22 @@ header {
         inset: 0;
         background-color: var(--color-input-placeholder);
         border-radius: 100vw;
-        box-shadow: var(--shadow-secondary);
+        box-shadow: inset var(--shadow-secondary);
         cursor: pointer;
+        transition: 400ms;
     }
 
     .slider::before {
         content: '';
         position: absolute;
-        top: 50%;
-        left: 5%;
-        transform: translateY(-50%);
+        top: 0;
+        left: 7%;
+        transform: translateY(10%);
         height: calc(100% * var(--_ball-size-ratio));
         aspect-ratio: 1;
         border-radius: 50%;
         background-color: var(--color-white);
-        transition: all 400ms;
+        transition: 400ms;
     }
     input[type="checkbox"]:checked ~ .slider::before {
         left: calc(100% - var(--_h));
@@ -184,7 +210,7 @@ header {
     }
 }
 
-.loggain {
+#loggain {
     display: none;
 }
 
@@ -1004,7 +1030,7 @@ footer {
         }
     }
 
-    .loggain {
+    #loggain {
         display: block;
     }
 
